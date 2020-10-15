@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Cognito Login" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Entry x:Name="UserNameTextBox" Placeholder="UserName" Margin="20,10,20,0" PlaceholderColor="White" TextColor="White"/>
+        <Entry x:Name="PasswordTextBox" Placeholder="Password" Margin="20,10,20,10" PlaceholderColor="White" TextColor="White"/>
+        <Button Clicked="Button_Clicked" Text="Login" Margin="20,10,20,0"/>
+        <Button Clicked="Button_Clicked_1" Text="Sign Up" Margin="20,10,20,0"/>
+        <Button Clicked="Button_Clicked_2" Text="Biometric Login" Margin="20,10,20,0"/>
+    </StackLayout>
+
+</ContentPage>

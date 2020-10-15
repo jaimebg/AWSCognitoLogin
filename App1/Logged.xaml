@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Logged"
+             Visual="Material">
+
+    <NavigationPage.TitleView>
+        <Label x:Name="lblTitle" FontSize="20"/>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="Id Token Values:" FontSize="18" FontAttributes="Bold"/>
+            <ListView x:Name="lstToken" SeparatorColor="White" BackgroundColor="Transparent" Margin="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center">
+                                <Label Text="{Binding}}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Label Text="User Name" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="lblUserName"/>
+            <Label Text="Email" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="lblEmail"/>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
