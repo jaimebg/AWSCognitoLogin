@@ -21,6 +21,7 @@ namespace App1
             var handler = new JwtSecurityTokenHandler();
             var tokenS = handler.ReadToken(App.user.IdToken) as JwtSecurityToken;
             lstToken.ItemsSource = tokenS.Claims.ToList();
+            string userSub = tokenS.Claims.First(claim => claim.Type == "sub").Value;
 
             lblTitle.Text = "WELCOME " + tokenS.Claims.First(claim => claim.Type == "cognito:username").Value.ToUpper();
             //lblUserName.Text = tokenS.Claims.First(claim => claim.Type == "cognito:username").Value;

@@ -25,7 +25,15 @@ namespace App1
 
         protected async override void OnStart()
         {
-            user = JsonConvert.DeserializeObject<AWSUser>(await SecureStorage.GetAsync("User"));
+            string secureUser = await SecureStorage.GetAsync("User");
+            if (secureUser != null)
+            {
+                user = JsonConvert.DeserializeObject<AWSUser>(secureUser);
+            }
+            else
+            {
+                user = null;
+            }
         }
 
         protected override void OnSleep()

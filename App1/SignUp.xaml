@@ -9,13 +9,17 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Cognito Sign Up" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Entry x:Name="UserNameTextBox" Placeholder="UserName" Margin="20" PlaceholderColor="White" TextColor="White"/>
-        <Entry x:Name="PasswordTextBox" Placeholder="Password" Margin="20" PlaceholderColor="White" TextColor="White"/>
-        <Entry x:Name="EmailTextBox" Placeholder="Email" Margin="20" PlaceholderColor="White" TextColor="White"/>
-        <Button Clicked="Button_Clicked" Text="Sign Up" Margin="20,10,20,0"/>
+        <ScrollView>
+            <StackLayout>
+                <Entry x:Name="UserNameTextBox" Placeholder="UserName" Margin="20" PlaceholderColor="White" TextColor="White"/>
+                <Entry x:Name="PasswordTextBox" Placeholder="Password" Margin="20" PlaceholderColor="White" TextColor="White"/>
+                <Entry x:Name="EmailTextBox" Placeholder="Email" Margin="20" PlaceholderColor="White" TextColor="White"/>
+                <Button Clicked="Button_Clicked" Text="Sign Up" Margin="20,10,20,0"/>
 
-        <Entry Placeholder="Confirmation Code" x:Name="ConfirmationTextBox" Margin="20" PlaceholderColor="White" TextColor="White"/>
-        <Button Text="Confirm Email" Clicked="Button_Clicked_1" Margin="20,10,20,0"/>
+                <Entry Placeholder="Confirmation Code" x:Name="ConfirmationTextBox" Margin="20" PlaceholderColor="White" TextColor="White"/>
+                <Button Text="Confirm Email" Clicked="Button_Clicked_1" Margin="20,10,20,0"/>
+            </StackLayout>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>
