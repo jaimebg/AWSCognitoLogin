@@ -23,9 +23,9 @@ namespace App1
             MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
-            user = JsonConvert.DeserializeObject<AWSUser>(Preferences.Get("User", ""));
+            user = JsonConvert.DeserializeObject<AWSUser>(await SecureStorage.GetAsync("User"));
         }
 
         protected override void OnSleep()

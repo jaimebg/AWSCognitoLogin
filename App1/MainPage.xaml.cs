@@ -32,7 +32,7 @@ namespace App1
                     string r = await RefreshToken(App.user.IdToken, App.user.AccessToken, App.user.RefreshToken, App.user.TokenIssued, App.user.Expires);
                     if (r == "Refreshed")
                     {
-                        Preferences.Set("User", JsonConvert.SerializeObject(App.user));
+                        await SecureStorage.SetAsync("User", JsonConvert.SerializeObject(App.user));
                         await Navigation.PushAsync(new Logged());
                         Navigation.RemovePage(this);
                     }
@@ -45,7 +45,7 @@ namespace App1
             string v = await SignIn(UserNameTextBox.Text, PasswordTextBox.Text);
             if (!v.StartsWith("Error"))
             {
-                Preferences.Set("User", JsonConvert.SerializeObject(App.user));
+                await SecureStorage.SetAsync("User", JsonConvert.SerializeObject(App.user));
                 await Navigation.PushAsync(new Logged());
                 Navigation.RemovePage(this);
             }
@@ -139,7 +139,7 @@ namespace App1
                     string r = await RefreshToken(App.user.IdToken, App.user.AccessToken, App.user.RefreshToken, App.user.TokenIssued, App.user.Expires);
                     if (r == "Refreshed")
                     {
-                        Preferences.Set("User", JsonConvert.SerializeObject(App.user));
+                        await SecureStorage.SetAsync("User", JsonConvert.SerializeObject(App.user));
                         await Navigation.PushAsync(new Logged());
                         Navigation.RemovePage(this);
                     }
